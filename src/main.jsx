@@ -1,12 +1,9 @@
-import "./styles.css";
-import MainPage from "./pages/MainPage.jsx";
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import App from './App.jsx'
 
-function App() {
-  return (
-    <>
-      <MainPage />
-    </>
-  );
-}
-
-export default App;
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+)

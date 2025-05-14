@@ -1,11 +1,9 @@
-import "./styles.css";
-import DevToolCompnent from "./config/DevToolComponent.jsx";
-import MainPage from "./pages/MainPage.jsx";
+import './styles.css';
+import MainPage from './pages/MainPage.jsx';
 
 function App() {
   return (
     <>
-      <DevToolCompnent />
       <MainPage />
     </>
   );
