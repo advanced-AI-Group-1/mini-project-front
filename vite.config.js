@@ -1,16 +1,16 @@
-import tailwindcss from "@tailwindcss/vite";
-import react from "@vitejs/plugin-react-swc";
-import path from "path";
-import { defineConfig } from "vite";
-import envCompatible from "vite-plugin-env-compatible";
+import tailwindcss from '@tailwindcss/vite';
+import react from '@vitejs/plugin-react-swc';
+import path from 'path';
+import { defineConfig } from 'vite';
+import envCompatible from 'vite-plugin-env-compatible';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "./",
+  base: './',
   plugins: [
     react({
       babel: {
-        presets: ["jotai/babel/preset"],
+        presets: ['jotai/babel/preset'],
       },
     }),
     envCompatible(),
@@ -19,21 +19,21 @@ export default defineConfig({
   resolve: {
     alias: [
       // eslint-disable-next-line no-undef
-      { find: "@src", replacement: path.resolve(__dirname, "src") },
+      { find: '@src', replacement: path.resolve(__dirname, 'src') },
       // eslint-disable-next-line no-undef
       {
-        find: "@components",
-        replacement: path.resolve(__dirname, "src/components"),
+        find: '@components',
+        replacement: path.resolve(__dirname, 'src/components'),
       },
     ],
   },
   server: {
-    host: "0.0.0.0",
+    host: '0.0.0.0',
     port: 5555,
     open: true,
   },
   build: {
-    outDir: "dist",
-    assetsDir: "asset",
+    outDir: 'dist',
+    assetsDir: 'asset',
   },
 });

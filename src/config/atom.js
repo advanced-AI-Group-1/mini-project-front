@@ -1,3 +1,4 @@
-import { atom } from "jotai";
+import { atom } from 'jotai';
 
-export const inputImagesAtom = atom([]);
+export const inputImageAtom = atom(null);
+export const isLoadingAtom = atom(false);
