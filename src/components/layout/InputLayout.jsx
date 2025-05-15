@@ -1,15 +1,14 @@
 import { faArrowUpFromBracket } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { inputImageAtom } from '@src/config/atom.js';
+import { inputImageAtom, isLoadingAtom } from '@src/config/atom.js';
 import { useAtom } from 'jotai';
 import React, { useState } from 'react';
-import LoadingLayout from '../LoadingLayout';
 
 const InputLayout = (props) => {
   const { onClick = () => {}, text, fileInputRef, handleFile } = props;
   const [isDragging, setIsDragging] = useState(false);
   const [image, setImage] = useAtom(inputImageAtom);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useAtom(isLoadingAtom);
 
   // 드래그 이벤트 핸들러
   const handleDragEnter = (e) => {
@@ -64,7 +63,6 @@ const InputLayout = (props) => {
   };
 
   return (
-    <LoadingLayout isLoading={isLoading} fullPage={false}>
       <div
         className={`flex flex-col rounded-2xl m-auto
         justify-center items-center
@@ -98,7 +96,6 @@ const InputLayout = (props) => {
           </div>
         )}
       </div>
-    </LoadingLayout>
   );
 };
 

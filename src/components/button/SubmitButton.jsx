@@ -1,7 +1,7 @@
+import LoadingModal from '@src/components/modal/LoadingModal.jsx';
 import { isLoadingAtom } from '@src/config/atom.js';
 import { useAtom } from 'jotai';
 import React from 'react';
-import LoadingModal from '../modal/LoadingModal.jsx';
 
 const SubmitButton = () => {
   const [isLoading, setIsLoading] = useAtom(isLoadingAtom);
