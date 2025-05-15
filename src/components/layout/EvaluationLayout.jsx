@@ -53,6 +53,33 @@ const MainResultItem = ({ label, value, valueClassName }) => (
 );
 
 /**
+ * AI 분석 결과 컴포넌트
+ */
+const AIAnalysisResult = ({ content }) => {
+  if (!content) return null;
+  
+  // 줄바꿈을 <br> 태그로 변환
+  const formattedContent = content.split('\n\n').map((paragraph, index) => (
+    <p key={index} className="mb-2">
+      {paragraph.split('\n').map((line, lineIndex) => (
+        <React.Fragment key={lineIndex}>
+          {line}
+          {lineIndex < paragraph.split('\n').length - 1 && <br />}
+        </React.Fragment>
+      ))}
+    </p>
+  ));
+
+  return (
+    <div className="p-4 bg-gray-50 rounded-lg">
+      <div className="text-gray-700 leading-relaxed">
+        {formattedContent}
+      </div>
+    </div>
+  );
+};
+
+/**
  * 평가 결과를 표시하는 레이아웃 컴포넌트
  */
 const EvaluationLayout = () => {
@@ -98,6 +125,14 @@ const EvaluationLayout = () => {
           ))}
         </div>
       </div>
+      
+      {/* AI 상세 분석 결과 */}
+      {evaluationResult.gpt_result && (
+        <div className="mb-8">
+          <h3 className="text-lg font-semibold mb-3 text-gray-800">AI 상세 분석</h3>
+          <AIAnalysisResult content={evaluationResult.gpt_result} />
+        </div>
+      )}
       
       {/* 측정 수치 */}
       <div className="mb-8">
