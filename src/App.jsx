@@ -1,27 +1,21 @@
-import './styles.css';
+import '@src/styles.css';
+import Header from '@src/components/layout/Header.jsx';
 import { isLoadingAtom } from '@src/config/atom.js';
 import MainPage from '@src/pages/MainPage.jsx';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useAtom } from 'jotai';
 import React from 'react';
 
-const Header = () => {
-  return (
-    <div className="header">
-      <img src="/logo.png" alt="logo" className="logo" />
-      <h1 className="title">사진의 정석</h1>
-    </div>
-  );
-};
+const queryClient = new QueryClient();
 
 function App() {
   const [loading, setLoading] = useAtom(isLoadingAtom);
+
   return (
-    <>
+    <QueryClientProvider client={queryClient}>
       <Header />
-      {<MainPage />}
-      {/* {loading && <LoadingComponent />} */}
-      {/* <WhiteLoadingComponent /> */}
-    </>
+      <MainPage />
+    </QueryClientProvider>
   );
 }
 
