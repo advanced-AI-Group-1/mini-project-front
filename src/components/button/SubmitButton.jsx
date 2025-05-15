@@ -1,19 +1,22 @@
 import LoadingModal from '@src/components/modal/LoadingModal.jsx';
-import { isLoadingAtom } from '@src/config/atom.js';
+import { inputImageAtom, isLoadingAtom } from '@src/config/atom.js';
+import useEvalutePhoto from '@src/hooks/useEvalutePhoto.js';
 import { useAtom } from 'jotai';
 import React from 'react';
 
 const SubmitButton = () => {
   const [isLoading, setIsLoading] = useAtom(isLoadingAtom);
+  const [image] = useAtom(inputImageAtom);
+  const { mutate } = useEvalutePhoto();
 
   const handleSubmit = () => {
-    setIsLoading(true);
+    if (!image) {
+      alert('이미지를 먼저 업로드해주세요.');
+      return;
+    }
 
-    // 여기에 분석 API 호출 등의 로직을 추가할 수 있습니다
-    // 예시: 3초 후에 로딩 상태를 해제하는 코드
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 3000);
+    // 이미지 평가 API 호출
+    mutate(image);
   };
 
   return (
