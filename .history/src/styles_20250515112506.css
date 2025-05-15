@@ -31,7 +31,7 @@
     display:flex;
   }
   .header {
-    @apply flex items-center justify-center py-8 border-gray-200 bg-white;
+    @apply flex items-center justify-center py-4 border-gray-200 bg-white;
   }
 
   .logo {
