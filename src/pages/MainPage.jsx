@@ -3,10 +3,9 @@ import InputImage from '@src/components/common/InputImage.jsx';
 import EvaluataionLayout from '@src/components/layout/EvaluationLayout.jsx';
 import InputLayout from '@src/components/layout/InputLayout.jsx';
 import MainContainer from '@src/components/layout/MainContainer.jsx';
-import React, { useState } from 'react';
+import React from 'react';
 
 const MainPage = () => {
-  const [images, setImages] = useState([]);
   return (
     <MainContainer>
       <InputImage
