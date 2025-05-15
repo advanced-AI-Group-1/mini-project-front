@@ -17,7 +17,6 @@ function App() {
   const [loading, setLoading] = useAtom(isLoadingAtom);
   return (
     <>
-      <Header />
       {<MainPage />}
       {/* {loading && <LoadingComponent />} */}
       {/* <WhiteLoadingComponent /> */}

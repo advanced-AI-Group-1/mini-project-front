@@ -85,7 +85,6 @@
 @layer base {
   html, body, #root {
     @apply m-0 p-0 w-full h-full overflow-x-hidden box-border;
-    font-family: 'Pretendard', sans-serif;
   }
 }
 
@@ -108,3 +107,20 @@
     --color-primary-900: rgba(23, 54, 120, 1);    /* 가장 진한 파란색 */
 }
 
+@layer components {
+
+  .parent-header{
+    display:flex;
+  }
+  .header {
+    @apply flex items-center justify-center py-8 border-gray-200 bg-white;
+  }
+
+  .logo {
+    @apply h-10 w-auto mr-3;
+  }
+
+  .title {
+    @apply text-2xl font-bold text-gray-800;
+  }
+}
