@@ -4,7 +4,7 @@ import React from 'react';
 
 /**
  * 결과 항목 그룹 정의
- * @param {Object} data - 평가 결과 데이터
+ * @param {Object} data - 평가 결과 데이터 (model_result)
  * @returns {Object} 그룹화된 결과 항목
  */
 const getResultGroups = (data) => ({
@@ -89,7 +89,11 @@ const EvaluationLayout = () => {
     return null;
   }
 
-  const resultGroups = getResultGroups(evaluationResult);
+  // 새로운 응답 형식에 맞게 model_result 데이터 사용
+  const modelResult = evaluationResult.model_result || evaluationResult;
+  const gptResult = evaluationResult.gpt_result;
+  
+  const resultGroups = getResultGroups(modelResult);
 
   // 값에 따른 색상 결정
   const getValueColor = (value) => {
@@ -127,10 +131,10 @@ const EvaluationLayout = () => {
       </div>
       
       {/* AI 상세 분석 결과 */}
-      {evaluationResult.gpt_result && (
+      {gptResult && (
         <div className="mb-8">
           <h3 className="text-lg font-semibold mb-3 text-gray-800">AI 상세 분석</h3>
-          <AIAnalysisResult content={evaluationResult.gpt_result} />
+          <AIAnalysisResult content={gptResult} />
         </div>
       )}
       
