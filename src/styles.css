@@ -85,6 +85,11 @@
 @layer base {
   html, body, #root {
     @apply m-0 p-0 w-full h-full overflow-x-hidden box-border;
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+  }
+  
+  * {
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
   }
 }
 
@@ -94,7 +99,12 @@
       @apply w-screen min-w-full max-w-full;
     }
   }
+  
+  .font-pretendard {
+    font-family: 'Pretendard', sans-serif;
+  }
 }
+
 @theme{
     --color-primary-100: rgba(240, 248, 255, 1);  /* 매우 연한 파란색 */
     --color-primary-200: rgba(224, 240, 255, 1);  /* 연한 파란색 */
