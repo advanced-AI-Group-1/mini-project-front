@@ -31,6 +31,13 @@ export default defineConfig({
     host: '0.0.0.0',
     port: 5555,
     open: true,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:8000',
+        changeOrigin: true,
+        secure: false,
+      },
+    },
   },
   build: {
     outDir: 'dist',
