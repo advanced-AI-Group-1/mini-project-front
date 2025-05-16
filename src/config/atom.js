@@ -8,3 +8,6 @@ export const errorStateAtom = atom({
   message: '',
   statusCode: null
 });
+
+// 현재 활성화된 기능을 추적하는 atom (배경 제거 또는 이미지 분석)
+export const activeFeatureAtom = atom('analysis'); // 기본값은 이미지 분석

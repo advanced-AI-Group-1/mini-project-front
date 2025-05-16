@@ -13,8 +13,12 @@ function App() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Header />
-      <MainPage />
+      <div className="flex flex-col min-h-screen">
+        <Header />
+        <div className="flex-grow">
+          <MainPage />
+        </div>
+      </div>
     </QueryClientProvider>
   );
 }

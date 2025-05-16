@@ -133,4 +133,38 @@
   .title {
     @apply text-2xl font-bold text-gray-800;
   }
+  
+  /* 공통 버튼 스타일 */
+  .btn-primary {
+    @apply w-full py-3 px-4 mt-4
+    flex justify-center items-center 
+    bg-primary-600 hover:bg-primary-700
+    text-white font-medium rounded-lg 
+    transition-colors duration-200
+    disabled:bg-gray-400 disabled:cursor-not-allowed;
+  }
+  
+  /* 보조 버튼 스타일 (취소, 복원 등) */
+  .btn-secondary {
+    @apply flex-1 py-2 px-4
+    bg-gray-500 text-white rounded-lg
+    hover:bg-gray-600 transition-colors;
+  }
+  
+  /* 성공 버튼 스타일 (적용하기 등) */
+  .btn-success {
+    @apply flex-1 py-2 px-4
+    bg-green-600 text-white rounded-lg
+    hover:bg-green-700 transition-colors;
+  }
+  
+  /* 작은 버튼 스타일 */
+  .btn-sm {
+    @apply py-1 px-4 text-sm;
+  }
+  
+  /* 로딩 스피너 */
+  .spinner {
+    @apply w-8 h-8 border-4 border-primary-500 border-t-transparent rounded-full animate-spin mb-2;
+  }
 }

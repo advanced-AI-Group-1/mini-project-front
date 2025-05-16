@@ -40,11 +40,7 @@ const SubmitButton = () => {
   return (
     <>
       <button
-        className="w-full py-3 px-4 mt-4
-        flex justify-center items-center 
-        bg-primary-600 hover:bg-primary-700
-        text-white font-medium rounded-lg 
-        transition-colors duration-200"
+        className="btn-primary"
         onClick={handleSubmit}
         disabled={isLoading}
       >

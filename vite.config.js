@@ -38,6 +38,7 @@ export default defineConfig({
         secure: false,
       },
     },
+    allowedHosts: ['grand-socially-reindeer.ngrok-free.app'],
   },
   build: {
     outDir: 'dist',
